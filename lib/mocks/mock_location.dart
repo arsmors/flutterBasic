@@ -25,12 +25,6 @@ class MockLocation extends Location {
           LocationFact(
               title: "xx",
               text: "aaa"),
-          LocationFact(
-              title: "xx",
-              text: "aaa"),
-          LocationFact(
-              title: "xx",
-              text: "aaa"),
         ]),
   ];
 
