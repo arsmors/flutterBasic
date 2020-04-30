@@ -72,6 +72,10 @@ flutter:
       fonts:
         - asset: assets/fonts/Pacifico.ttf
           weight: 300
+    - family: Sansatio
+      fonts:
+        - asset: assets/fonts/Sansation-Regular.ttf
+          weight: 300
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_test/mocks/mock_location.dart';
 import 'package:flutter_app_test/styles.dart';
 
 import 'models/location.dart';
 
 class LocationDetail extends StatelessWidget {
-  final Location location;
+  final int locationID;
 
-  LocationDetail(this.location);
+  LocationDetail(this.locationID);
 
   @override
   Widget build(BuildContext context) {
+    var location = MockLocation.fetch(this.locationID);
+
     return Scaffold(
-        appBar: AppBar(title: Text(location.name, style:
-        Styles.NavBarTitle)),
+        appBar: AppBar(title: Text(location.name, style: Styles.NavBarTitle)),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -20,7 +22,7 @@ class LocationDetail extends StatelessWidget {
         ));
   }
 
-  List<Widget> _renderBody(BuildContext context, Location location){
+  List<Widget> _renderBody(BuildContext context, Location location) {
     var result = List<Widget>();
     result.add(_bannerImage(location.url, 170.0));
     result.addAll(_renderFacts(context, location));
@@ -36,20 +38,17 @@ class LocationDetail extends StatelessWidget {
     return result;
   }
 
-
   Widget _sectionTitle(String text) {
     return Container(
-      padding: EdgeInsets.fromLTRB(25.0, 25.0, 25.0, 10.0),
-      child: Text(text,
-      textAlign: TextAlign.left,
-      style: Styles.headerLarge));
+        padding: EdgeInsets.fromLTRB(25.0, 25.0, 25.0, 10.0),
+        child:
+            Text(text, textAlign: TextAlign.left, style: Styles.headerLarge));
   }
 
   Widget _sectionText(String text) {
     return Container(
-      padding: EdgeInsets.fromLTRB(25.0, 25.0, 25.0, 15.0),
-      child: Text(text, style: Styles.textDefault));
-    
+        padding: EdgeInsets.fromLTRB(25.0, 25.0, 25.0, 15.0),
+        child: Text(text, style: Styles.textDefault));
   }
 
   Widget _bannerImage(String url, double height) {

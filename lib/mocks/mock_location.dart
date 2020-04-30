@@ -18,13 +18,14 @@ class MockLocation extends Location {
                   "ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu,")
         ]),
     Location(
-        name: "xxx xxxx",
+        name: "Location Name2",
         url:
             "https://cdn1-www.dogtime.com/assets/uploads/2020/02/affenhuahua-mixed-dog-breed-pictures-COVER-650x368.jpg",
         facts: <LocationFact>[
           LocationFact(
-              title: "xx",
-              text: "aaa"),
+              title: "Summary2",
+              text: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. "
+                  "Aenean commodo ligula eget dolor. Aenean massa. Cum sociis"),
         ]),
   ];
 
@@ -34,6 +35,9 @@ class MockLocation extends Location {
 
   static List<Location> fetchAll() {
     return MockLocation.items;
+  }
 
+  static Location fetch(int index) {
+    return MockLocation.items[index];
   }
 }
